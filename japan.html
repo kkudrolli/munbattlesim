@@ -1,15 +1,24 @@
+<script type="text/javascript" src="jquery-1.2.2.pack.js"></script>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
         <title>Japan Map</title>
         <style type="text/css" media="screen">
-
-
+        #tip {
+                position : absolute;
+                border : 1px solid gray;
+                background-color : #efefef;
+                padding : 3px;
+                z-index: 1000;
+                /* set this to create word wrap */
+                max-width: 200px;
+        }
         </style>
     </head>
     <body>
-
+        <div id="tip"></div>
         <div id="map" align="center" class="japan">
             <!-- Raphael JS Map Here -->
             <script src="raphael-min.js"></script>

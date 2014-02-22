@@ -43,6 +43,16 @@ var set = paper.set(regions);
 paper.setViewBox(0,0,600,900,true);
 set.transform('S0.7,0.7,0,0');
 
+/* Tip Variables */
+var tip = $("#tip").hide();
+var tipText = "";
+var over = false;
+
+/* Gives each tooltip a number corresponding to its province */
+for (var i =  0; i < regions.length; i++) {
+	addTip(regions[i].node, i);
+}
+
 //Iterate through the regions 
 for (var i = 0; i < regions.length; i++) {
 
@@ -50,9 +60,27 @@ for (var i = 0; i < regions.length; i++) {
 
     regions[i].mouseover(function(e){
         this.node.style.opacity = 0.7;
+
+        /* This begins what adds the tooltips */
+        tip.css("left", e.clientX+20).css("top", e.clientY+20);
+        tip.text(tipText);
+        /* This ends what adds the tooltips */
+
     });
 
     regions[i].mouseout(function(e){
         this.node.style.opacity = 1;
     });
+}
+
+/* Adds the tooltip to the corresponding node */
+function addTip(node, txt) {
+	$(node).mouseover(function(){
+		tipText = txt;
+		tip.fadeIn();
+		over=true;
+	}).mouseout(function(){
+		tip.fadeOut(200);
+		over=false;
+	});
 }
