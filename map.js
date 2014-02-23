@@ -55,13 +55,12 @@ var troops = [0, 100, 200, 300, 400, 500, 600, 700, 800, 900];
 var wood = [0, 100, 200, 300, 400, 500, 600, 700, 800, 900];
 var weapons = [0, 100, 200, 300, 400, 500, 600, 700, 800, 900];
 
-/* Gives each tooltip a number corresponding to its province */
-for (var i =  0; i < regions.length; i++) {
-	addTip(regions[i].node, "Troop Count: " + troops[i] + " Wood: " + wood[i] + " Weapons: " + weapons[i]);
-}
-
 //Iterate through the regions 
 for (var i = 0; i < regions.length; i++) {
+
+	/* Adds text to tooltip 
+   	addTip(regions[i].node, "Troop Count: " + troops[i] + 
+   		" Wood: " + wood[i] + " Weapons: " + weapons[i]);
     
     regions[i].node.setAttribute('fill', 'red');
 
@@ -69,28 +68,27 @@ for (var i = 0; i < regions.length; i++) {
         this.node.style.opacity = 0.5;
 
         /* This begins what adds the tooltips */
-        tip.css("left", e.clientX+20).css("top", e.clientY+20);
+        tip.css("left", e.clientX+50).css("top", e.clientY+25);
         tip.text(tipText);
-        tip.fadeIn(500);
+        tip.fadeIn();
         /* This ends what adds the tooltips */
 
     });
 
     regions[i].mouseout(function(e){
-        tip.fadeOut(500);
         this.node.style.opacity = 1;
+        
     });
 }
 
-/* Adds the tooltip to the corresponding node */
+/* Adds the text to the corresponding node, rejects mouseover 
+   duplication. This could be cleaned up by someone who
+   actually knows JQuery... for now it works though.
+ */
 function addTip(node, txt) {
 	$(node).mouseover(function(){
 		tipText = txt;
-		tip.fadeIn();
-		over=true;
 	}).mouseout(function(){
-		tip.fadeOut(200);
-		over=false;
         });
 }
 
