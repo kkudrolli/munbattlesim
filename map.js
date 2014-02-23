@@ -50,9 +50,14 @@ var tip = $("#tip").hide();
 var tipText = "";
 var over = false;
 
+// Random troop count list for testing
+var troops = [0, 100, 200, 300, 400, 500, 600, 700, 800, 900];
+var wood = [0, 100, 200, 300, 400, 500, 600, 700, 800, 900];
+var weapons = [0, 100, 200, 300, 400, 500, 600, 700, 800, 900];
+
 /* Gives each tooltip a number corresponding to its province */
 for (var i =  0; i < regions.length; i++) {
-	addTip(regions[i].node, i);
+	addTip(regions[i].node, "Troop Count: " + troops[i] + " Wood: " + wood[i] + " Weapons: " + weapons[i]);
 }
 
 //Iterate through the regions 
@@ -61,16 +66,18 @@ for (var i = 0; i < regions.length; i++) {
     regions[i].node.setAttribute('fill', 'red');
 
     regions[i].mouseover(function(e){
-        this.node.style.opacity = 0.7;
+        this.node.style.opacity = 0.5;
 
         /* This begins what adds the tooltips */
         tip.css("left", e.clientX+20).css("top", e.clientY+20);
         tip.text(tipText);
+        tip.fadeIn(500);
         /* This ends what adds the tooltips */
 
     });
 
     regions[i].mouseout(function(e){
+        tip.fadeOut(500);
         this.node.style.opacity = 1;
     });
 }
@@ -84,5 +91,6 @@ function addTip(node, txt) {
 	}).mouseout(function(){
 		tip.fadeOut(200);
 		over=false;
-	});
+        });
 }
+
