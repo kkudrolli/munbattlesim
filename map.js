@@ -58,7 +58,7 @@ var weapons = [0, 100, 200, 300, 400, 500, 600, 700, 800, 900];
 //Iterate through the regions 
 for (var i = 0; i < regions.length; i++) {
 
-	/* Adds text to tooltip 
+	/* Adds text to tooltip, works fine in this loop */
    	addTip(regions[i].node, "Troop Count: " + troops[i] + 
    		" Wood: " + wood[i] + " Weapons: " + weapons[i]);
     
