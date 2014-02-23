@@ -51,7 +51,7 @@ var tipText = "";
 var over = false;
 
 // Random troop count list for testing
-var troops = [0, 100, 200, 300, 400, 500, 600, 700, 800, 900];
+var troops = [0, 100, 200, 300, 400, 500, 600, 700, 800, 900]
 var wood = [0, 100, 200, 300, 400, 500, 600, 700, 800, 900];
 var weapons = [0, 100, 200, 300, 400, 500, 600, 700, 800, 900];
 
@@ -59,8 +59,8 @@ var weapons = [0, 100, 200, 300, 400, 500, 600, 700, 800, 900];
 for (var i = 0; i < regions.length; i++) {
 
 	/* Adds text to tooltip, works fine in this loop */
-   	addTip(regions[i].node, "Troop Count: " + troops[i] + 
-   		" Wood: " + wood[i] + " Weapons: " + weapons[i]);
+   	addTip(regions[i].node, "Troop Count: " + troops[i] + "\n" + 
+   		"Wood: " + wood[i] + "\t" + "Weapons: " + weapons[i] + "\n");
     
     regions[i].node.setAttribute('fill', 'red');
 
