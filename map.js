@@ -77,8 +77,8 @@ for (var i = 0; i < regions.length; i++) {
     });
 
     regions[i].mouseout(function(e){
-        this.node.style.opacity = 1;
-        
+    	this.node.style.opacity = 1;
+
     });
 }
 
@@ -90,6 +90,7 @@ function addTip(node, txt) {
 	$(node).mouseover(function(){
 		tipText = txt;
 	}).mouseout(function(){
-        });
+		tip.hide();
+    });
 }
 
