@@ -1,0 +1,15 @@
+#tip {
+        position : absolute;
+        border : 3px solid black;
+        background-color : #9E1316;
+        color: white;
+        font-family: Helvetica, sans-serif;
+        padding : 5px;
+        z-index: 1000;
+        /* set this to create word wrap */
+        max-width: 130px;
+}
+
+.japan {
+    background-color: #6faaf9;
+}
