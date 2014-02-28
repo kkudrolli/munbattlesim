@@ -12,6 +12,11 @@ $(window).resize(resizePaper);
 
 var actualHeaderText = "Programming all day, dropping Japanties.";
 var headerText = paper.text(315, 55, actualHeaderText);
+headerText.attr({"font-size": 44, "font-weight" : "bold", "stroke" : "white", "fill" : "black", "font-family": "Arial, Helvetica, sans-serif" });
+>>>>>>> ada9fbe69c9a0a754987c53380131ec25405eb42:map.js
+
+var actualHeaderText = "Programming all day, dropping Japanties.";
+var headerText = paper.text(315, 55, actualHeaderText);
 headerText.attr({"font-size": 56, "font-weight" : "bold", "stroke" : "white", "fill" : "black", "font-family": "Arial, Helvetica, sans-serif" });
 
 paper.setStart();
@@ -116,13 +121,12 @@ for (var i = 0; i < regions.length; i++) {
     });
 
     regions[i].mousedown(function(e){
-    	
 
     })
 
 
     regions[i].mouseout(function(e){
-        this.node.style.opacity = 1;
+    	this.node.style.opacity = 1;
     });
 }
 
@@ -132,10 +136,11 @@ for (var i = 0; i < regions.length; i++) {
  
 function addTip(node, txt) {
 	$(node).mouseover(function(){
-		tipText = txt;
-	}).mouseout(function(){
-        tip.hide();
+	    tipText = txt;
+	}).mouseout(function() {
+            tip.hide();
      });
+    });
 }
 
 
